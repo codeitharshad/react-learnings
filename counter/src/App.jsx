@@ -5,14 +5,20 @@ import './App.css'
 
 function App() {
 
-  let counter = 0;
+  const [counter, setCounter] = useState(0)
 
   const addValue =()=>{
-    
+    setCounter(counter + 1)
   };
-
+  
   const lessValue = () => {
-
+    if(counter === 0){
+      setCounter(0)
+      window.alert("Value cant be Negative")
+    }else {
+      setCounter((prev) => prev - 1);
+    }
+    
   };
 
 
